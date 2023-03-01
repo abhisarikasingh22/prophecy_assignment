@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row" style="margin-top: 4%;">
+    <div class="col align-self-center">
+      <form class="form-inline">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" [(ngModel)]="search" type="text" name="search"
+            id="search" (ngModelChange)="searchModelChanged.next($event)" placeholder="Search..."
+            aria-label="Search" aria-describedby="basic-addon2">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col align-self-center">
+      <app-resuable-table [headerList]="headerList" [gridArray]="gridArray"></app-resuable-table>
+    </div>
+  </div>
+</div>

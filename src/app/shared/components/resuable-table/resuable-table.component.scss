@@ -1,0 +1,24 @@
+@import "../../../../assets/css/variable";
+
+.table-pagination-part {
+    padding: 15px 10px;
+}
+
+.show-rows {
+    select {
+        font-size: $primary-font-size;
+        font-weight: 500;
+        height: 35px;
+        padding: 6px 10px;
+        border: 1px solid $border-color;
+        position: relative;
+        cursor: pointer;
+        margin-left: 20px;
+        border-radius: 3px;
+
+        &:focus {
+            border-color: $primary-color;
+            outline: none;
+        }
+    }
+}

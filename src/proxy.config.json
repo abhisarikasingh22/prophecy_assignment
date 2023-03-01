@@ -1,0 +1,11 @@
+{
+    "/api/*": {
+        "target": "https://v0.postcodeapi.com.au/",
+        "secure": true,
+        "changeOrigin":true,
+        "logLevel": "debug",
+        "pathRewrite" :{
+            "^/api/" : ""
+        }
+    }
+}

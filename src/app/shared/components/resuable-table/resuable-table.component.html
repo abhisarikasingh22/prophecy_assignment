@@ -1,0 +1,38 @@
+<div class="table-responsive">
+    <table class="table">
+        <thead class="table-dark">
+           <tr>
+            <th *ngFor="let item of headerList">{{item.headerName}}</th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of pagination.currentRecords">
+                <td *ngFor="let head of headerList">{{item[head.keyValue]}}</td>
+            </tr>
+            <tr *ngIf="pagination.currentRecords.length==0">No Data Found !</tr>
+        </tbody>
+    </table>
+</div>
+<div class="table-pagination-part">
+    <div class="row align-items-center  justify-content-between">
+       <div class="col-auto">
+          <pagination [totalItems]="gridArray.length" name="pageNo"
+             [(ngModel)]='pagination.pageNo' [maxSize]="10" (pageChanged)="pageChange($event)"
+             [itemsPerPage]="pagination.itemsPerPage"
+             class="table-pagination mb-0 "></pagination>
+       </div>
+       <div class="col-sm-auto mt-3 mt-md-0 col-12 text-right">
+          <div class="d-flex align-items-center show-rows justify-content-end">
+             <p class="m-0 result-count">Show Rows</p>
+             <select name="itemsPerPage" [(ngModel)]='pagination.itemsPerPage'
+                (change)='changeItemsPerPage()'>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+             </select>
+          </div>
+       </div>
+    </div>
+ </div>
